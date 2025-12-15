@@ -1,0 +1,32 @@
+# --- Python / venv ---
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+*.coverage
+.coverage
+.pytype/
+.mypy_cache/
+
+# --- Editor / OS junk ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Env & secrets ---
+.env
+.env.*  # in case you ever have .env.local, .env.dev, etc.
+
+# --- ADK runtime artifacts ---
+.adk/
+run_log.jsonl
+
+# --- Node / Next.js frontend ---
+frontend/next-ui/node_modules/
+frontend/next-ui/.next/
+frontend/next-ui/.turbo/
+frontend/next-ui/package-lock.json
+# (keep pnpm-lock.yaml or yarn.lock if you use them; otherwise ignore their lockfiles too)
