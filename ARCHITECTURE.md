@@ -3,7 +3,7 @@
 AI Research Scout uses a hybrid sequential + parallel agentic architecture built on Google ADK.
 
 ## High-Level Flow (ASCII)
-'''
+```
 User (Persona: CTO / VC / Tech Leader)
               |
               v
@@ -32,7 +32,7 @@ User (Persona: CTO / VC / Tech Leader)
               |
               v
 Decision-Oriented Recommendation
-'''
+```
 ## Key Design Points
 - Gemini-powered planning
 - Parallel multi-agent execution
