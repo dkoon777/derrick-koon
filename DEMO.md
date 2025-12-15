@@ -1,11 +1,12 @@
 # Demo Video
 
 Video Link:
-https://www.loom.com/share/c733e373a16c4fb7a4381da2a8749d43
+https://www.loom.com/share/e61faca5b11a4667b71cfa35ff10217a
 
 ## Demo Walkthrough Timestamps
-
+```
 00:00–00:30 - Intro & setup
 00:30–01:30 - User input → Planning
 01:30–02:30 - Tool calls & memory
-02:30–03:30 - Final output & edge case handling
+02:30–04:00 - Final output & edge case handling
+```
