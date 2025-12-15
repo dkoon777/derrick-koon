@@ -13,6 +13,12 @@ While the demo focuses on the CTO persona due to time constraints, the architect
 - Decision-oriented recommendations rather than raw summaries
 - Multi-persona architecture (CTO, VC, Tech Leader)
 
+## Demo Screenshot
+
+![AI Research Scout UI](images/AI%20Research%20Scout%20Screenshot.png)
+
+*The AI Research Scout interface showing executive highlights, technical themes, and multi-source research synthesis.*
+
 ## Project Structure Notes
 The `research_scout_agent/` directory is intentionally located at the repository root rather than under `src/`. This follows Google ADK conventions, where each agent is treated as a first-class application module that can be launched independently via `adk web` or `adk api_server`.
 
@@ -20,27 +26,44 @@ The `src/` directory contains shared logic, utilities, planners, executors, and 
 
 ## 🚀 Getting Started
 
+## Prerequisites
+- Python 3.10+
+- Node.js 18+ (for frontend)
+- Google Gemini API key ([Get one here](https://aistudio.google.com/apikey))
+- (Optional) GitHub Personal Access Token
+   
+## Environment Setup
+1. Copy `.env.example` to `.env`
+2. Add your GOOGLE_API_KEY
+3. (Optional) Add GITHUB_TOKEN for higher rate limits
+
 ### Create virtual environment (from repo root)
 ```bash
+cd derrick-koon
 python -m venv .venv
-```
-
-### Activate environment
-```bash
+#activate it
 source .venv/bin/activate
 ```
 
 ### Install dependencies
 ```bash
+cd derrick-koon
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
 ### Start ADK backend
 ```bash
+cd derrick-koon
+source .env
+echo $GOOGLE_API_KEY   
 export PYTHONPATH=.
 adk web
 # OR
+cd derrick-koon
+source .env
+echo $GOOGLE_API_KEY   
+export PYTHONPATH=.
 adk api_server research_scout_agent --allow_origins="http://localhost:3000"
 ```
 
@@ -55,7 +78,9 @@ curl -X DELETE http://localhost:8000/apps/research_scout_agent/users/u_123/sessi
 
 ### React UI
 ```bash
-cd frontend
+cd derrick-koon
+source .venv/bin/activate
+cd src/frontend
 npx create-next-app@latest next-ui
 cd next-ui
 npm install react-markdown remark-gfm

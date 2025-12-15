@@ -33,6 +33,13 @@ User (Persona: CTO / VC / Tech Leader)
               v
 Decision-Oriented Recommendation
 ```
+
+## Detailed Sequence Flow
+
+The following diagram shows the complete request lifecycle through the agentic system:
+
+![Sequence Diagram](images/sequence_diagram.png)
+
 ## Key Design Points
 - Gemini-powered planning
 - Parallel multi-agent execution

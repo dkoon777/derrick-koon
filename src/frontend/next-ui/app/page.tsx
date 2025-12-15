@@ -420,7 +420,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Actions */}
+            {/* In page.tsx, update your Actions section: */}
             <div className="flex flex-wrap items-center gap-3">
               <button
                 type="submit"
@@ -429,9 +429,34 @@ export default function Home() {
               >
                 {loading ? "Running research…" : "Run research"}
               </button>
+              
+              {sessionId && !loading && (
+                <button
+                  type="button"
+                  onClick={async () => {
+                    try {
+                      await fetch(
+                        `${API_BASE}/apps/${APP_NAME}/users/${USER_ID}/sessions/${sessionId}`,
+                        { method: "DELETE" }
+                      );
+                      setSessionId(null);
+                      setFinalSummary(null);
+                      setRawState(null);
+                      setRawRunResponse(null);
+                      setError(null);
+                    } catch (err) {
+                      console.error("Failed to clear session:", err);
+                    }
+                  }}
+                  className="inline-flex items-center justify-center rounded-xl border border-slate-700 text-slate-300 text-sm font-medium px-4 py-2 hover:bg-slate-800 hover:border-slate-600 transition"
+                >
+                  🔄 New Session
+                </button>
+              )}
+              
               {sessionId && (
                 <span className="text-[11px] text-slate-500">
-                  Session: <code>{sessionId}</code>
+                  Session: <code>{sessionId.slice(0, 8)}...</code>
                 </span>
               )}
             </div>
